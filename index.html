@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122347172-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122347172-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="moon.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Moon in the Window</h1>
+        </div>
+
+        <p>
+            One night before bed my wife noticed the moon shining in through our skylight. This led me to ask the
+            question,
+            "How often does it do that?" The below form lets you put in details about your
+            <a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">lat/long</a> and the
+            <a href="https://en.wikipedia.org/wiki/Celestial_coordinate_system">Celestial coordinate</a>
+            of the sky you can see through the window, and determine when the moon will be visible from it.
+        </p>
+
+        <h4>
+            Finding your window's Altitude and Azimuth
+        </h4>
+        <p>
+            The simplest way to find your window's altitude and azimuth is to use an app like
+            <a href="https://play.google.com/store/apps/details?id=com.lavadip.skeye&hl=en_US">SKEye</a>. Stand under
+            the window and point the app outside, note the Alt (altitude) and the Az (azimuth).
+        </p>
+
+        <h4>
+            Reading the results
+        </h4>
+        <p>
+            The resultant table shows an hour by hour breakdown of the moon's predicted position and the delta from your window.
+            Search the table for the smallest delta values for both your windows altitude and azimuth and set an alarm to see
+            the moon out your window! 
+        </p>
+
+        <FORM NAME="myform" ACTION="" METHOD="GET">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group" id="latGroup">
+                        <label class="control-label" for="latitude">Your latitude</label>
+                        <input type="number" class="form-control" id="latitude" placeholder="latitude" value="30.26759"
+                            required>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group" id="longGroup">
+                        <label class="control-label" for="longitude">Your longitude</label>
+                        <input type="number" class="form-control" id="longitude" placeholder="longitude" value="-97.74299">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group" id="altGroup">
+                        <label class="control-label" for="windowAltitude">Window Altitude</label>
+                        <input type="number" class="form-control" id="windowAltitude" placeholder="Altitude" value="72">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group" id="azGroup">
+                        <label class="control-label" for="windowAzimuth">Window Azimuth</label>
+                        <input type="number" class="form-control" id="windowAzimuth" placeholder="Azimuth" value="272">
+                    </div>
+                </div>
+            </div>
+
+            <INPUT TYPE="button" NAME="button" class="btn btn-primary" Value="Submit" onClick="display(this.form)" />
+        </FORM>
+
+        <div id="result">
+            <table class="table table-bordered">
+                <!-- here goes our data! -->
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
